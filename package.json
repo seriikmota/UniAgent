@@ -11,10 +11,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@langchain/community": "^0.3.42",
+    "@langchain/core": "^0.3.55",
+    "@langchain/langgraph": "^0.2.71",
+    "@langchain/langgraph-checkpoint-postgres": "^0.0.5",
+    "@langchain/openai": "^0.5.10",
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "pg": "^8.15.6"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
