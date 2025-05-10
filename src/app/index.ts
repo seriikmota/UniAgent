@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import { defaultRouter } from "./route/default.route";
+import toolsMiddleware from "./middleware/tools.middleware";
+import {agentRouter} from "./route/agent.route";
 
 class App {
   public app: express.Application;
@@ -17,10 +19,12 @@ class App {
     this.app.use(cors());
     this.app.use(bodyParser.urlencoded({ limit: "50mb", extended: false }));
     this.app.use(bodyParser.json({ limit: "50mb" }));
+    this.app.use(toolsMiddleware);
   }
 
   route() {
     this.app.use("/", defaultRouter);
+    this.app.use("/agent", agentRouter);
   }
 }
 
